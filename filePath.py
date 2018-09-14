@@ -1,10 +1,15 @@
-#!/usr/bin/python3.7
+#!/usr/local/bin/python3.7
 
-import os
+import os,re
+import pymongo as pm
 
-logPath=os.path.join('var','log')
+logPath=os.path.join('/var','log/')
 
 logFiles=['dmesg', 'syslog']
 
-print('logFiles[1]')
+syslogFile=logPath+logFiles[1]
+
+print(syslogFile)
+
+
 
