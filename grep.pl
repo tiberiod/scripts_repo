@@ -1,16 +1,17 @@
 #!/usr/bin/perl
 
-use XML::Simple;
+use XML::LibXML;
 
 $Devel::Trace::TRACE = 1;
 
 use warnings;
 use strict;
 
+my $xmlFile = $ARGV[0];
 
 sub checkFile {
 
-    my $xmlFile = $ARGV[0];
+    #my $xmlFile = $ARGV[0];
 
     print "$xmlFile";
     
@@ -22,32 +23,77 @@ sub checkFile {
     return;
 }
 
-q# Fields that need to be validated against
- <identificacao>
-  <registro>99999</registro>
-  <cnpj>12345678000100</cnpj>
-  <ano>2016</ano>
-  <trimestre>1</trimestre>
- </identificacao>
-#;    
+# Fields that need to be validated against
+# DataHoraTransmissao
+# CodigoAplicacao
+# CodigoFonteTransmissao
+# LinhaDeNegocio
+# Contribuinte
+# IdentificadorContribuinte
+# DataInicioPeriodo
+# DataFimPeriodo
+# TTotalDeArquivos
+# OrdemDeProcessamento
+# QuantidadeDeRegistros    
 
-sub validateFields {
+sub validateFields { 
 
+       my $file = XML::LibXML->load_xml(location => $xmlFile);
 
-       my $xml = XML::Simple->new;
-    
-       #my ($filename, $directories, $suffix) = fileparse($fileName);
-
-       my $file = $xml->XMLin($fileName) or die "Failed for $fileName: $!+\n";
-      
-       if ($file->{registro} ne 'TIFF') {
-           output($filename, 'Identity Format Error');
-           next;
+       if ($file->findvalue('//DataHoraTransmissao') ne '2018-06-12001:00:00') {
+          
+           print "\nError on tag DataHoraTransmissao.\n";
+           
        }
    
-       if ($file->{toolOutput}{version} ne '6.0'){
-           output($filename, 'Version Error');
-           next;
+       if ($file->findvalue('//CodigoAplicacao') ne '6.0'){
+           print "\nError on tag CodigoAplicacao.\n";
+        
+       }
+
+       if ($file->findvalue('//CodigoFonteTransmissao') ne '6.0'){
+           print "\nError on tag CodigoFonteTransmissao.\n";
+        
+       }
+       
+       if ($file->findvalue('//LinhaDeNegocio') ne 'TIFF') {
+           print "\nError on tag LinhaDeNegocio.\n";
+        
+       }
+   
+       if ($file->findvalue('//Contribuinte') ne '6.0'){
+           print "\nError on tag Contribuinte.\n";
+           
+       }
+
+       if ($file->findvalue('//IdentificadorContribuinte') ne '6.0'){
+           print "\nError on tag IdentificadorContribuinte.\n";
+           
+       }
+   
+      if ($file->findvalue('//DataInicioPeriodo') ne 'TIFF') {
+           print "\nError on tag DataInicioPeriodo.\n";
+           
+       }
+   
+       if ($file->findvalue('//DataFimPeriodo') ne '6.0'){
+           print "\nError on tag DataFimPeriodo.\n";
+         
+       }
+
+       if ($file->findvalue('//TotalDeArquivos') ne '6.0'){
+           print "\nError on tag TotalDeArquivos.\n";
+           
+       }
+
+      if ($file->findvalue('//OrdemDeProcessamento') ne '6.0'){
+           print "\nError on tag OrdemDeProcessamento.\n";
+           
+       }
+
+      if ($file->findvalue('//QuantidadeDeRegistros') ne '6.0'){
+           print "\nError on tag QuantidadeDeRegistros.\n";
+           
        }
 
 }    
