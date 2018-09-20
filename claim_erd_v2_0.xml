@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="iso-8859-1"?> 
+<claims>
+	<LNCabecalhoContribuinte>
+	<DataHoraTransmissao>2018-06-12001:00:00</DataHoraTransmissao>
+	<CodigoAplicacao>BHCL</CodigoAplicacao>
+	<CodigoFonteTransmissao>IM502860001</CodigoFonteTransmissao>
+	<LinhaDeNegocio>01</LinhaDeNegocio>
+	<Contribuinte>359017  INTERMEDICA</Contribuinte>
+	<IdentificadorContribuinte>v1.0</IdentificadorContribuinte>
+	<DataInicioPeriodo>20180624</DataInicioPeriodo>
+	<DataFimPeriodo>20180624</DataFimPeriodo>
+	<TotalDeArquivos>001</TotalDeArquivos>	
+	<OrdemDeProcessamento>001</OrdemDeProcessamento>
+	<QuantidadeDeRegistros>000000001</QuantidadeDeRegistros>
+	</LNCabecalhoContribuinte>
+</claims>
+
