@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="iso-8859-1"?> 
 <claims>
 	<LNCabecalhoContribuinte>
-	<DataHoraTransmissao>2018-06-12001:00:00</DataHoraTransmissao>
-	<CodigoAplicacao>BHCL</CodigoAplicacao>
-	<CodigoFonteTransmissao>IM502860001</CodigoFonteTransmissao>
-	<LinhaDeNegocio>01</LinhaDeNegocio>
-	<Contribuinte>359017  INTERMEDICA</Contribuinte>
-	<IdentificadorContribuinte>v1.0</IdentificadorContribuinte>
-	<DataInicioPeriodo>20180624</DataInicioPeriodo>
+	<DataHoraTransmissao>2018-06-12T01:00:00</DataHoraTransmissao>      
+	<CodigoAplicacao>ABCD</CodigoAplicacao>                             
+	<CodigoFonteTransmissao>IM123456</CodigoFonteTransmissao>                
+	<LinhaDeNegocio>11</LinhaDeNegocio>                                           
+	<Contribuinte>359077  INTERMEDICA</Contribuinte>
+	<IdentificadorContribuinte>v1.9</IdentificadorContribuinte>
+	<DataInicioPeriodo>20181231</DataInicioPeriodo>
 	<DataFimPeriodo>20180624</DataFimPeriodo>
 	<TotalDeArquivos>001</TotalDeArquivos>	
 	<OrdemDeProcessamento>001</OrdemDeProcessamento>
